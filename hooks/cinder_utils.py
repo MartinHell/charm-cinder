@@ -172,6 +172,7 @@ class CinderCharmError(Exception):
 CINDER_CONF_DIR = "/etc/cinder"
 CINDER_CONF = '%s/cinder.conf' % CINDER_CONF_DIR
 CINDER_API_CONF = '%s/api-paste.ini' % CINDER_CONF_DIR
+CINDER_LOGGER_CONF = '%s/logging.conf' % CINDER_CONF_DIR
 CEPH_CONF = '/etc/ceph/ceph.conf'
 CHARM_CEPH_CONF = '/var/lib/charm/{}/ceph.conf'
 
@@ -264,6 +265,10 @@ BASE_RESOURCE_MAP = OrderedDict([
         'contexts': [cinder_contexts.ApacheSSLContext()],
         'services': ['apache2'],
     }),
+    (CINDER_LOGGER_CONF, {
+        'contexts': [cinder_contexts.CinderLoggingContext()],
+        'services': ['cinder-api', 'cinder-volume', 'cinder-scheduler'],
+    })
 ])
 
 
