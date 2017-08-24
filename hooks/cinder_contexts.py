@@ -253,7 +253,7 @@ class VolumeUsageAuditContext(OSContextGenerator):
             'volume_usage_audit_period': config("volume-usage-audit-period")
         }
 
-class CinderLoggingContext(context.OSContextGenerator):
+class CinderLoggingContext(OSContextGenerator):
 
     def __call__(self):
         ctxt = {}
