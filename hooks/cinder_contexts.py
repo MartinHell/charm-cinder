@@ -255,3 +255,9 @@ class VolumeUsageAuditContext(OSContextGenerator):
         return {
             'volume_usage_audit_period': config("volume-usage-audit-period")
         }
+
+class CinderVolumeContext(OSContextGenerator):
+    def __call__(self):
+        ctxt = {}
+        ctxt['default_volume_type'] = config('default_volume_type')
+        return ctxt
