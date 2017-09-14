@@ -17,6 +17,11 @@ options:
     default: False
     description: |
       Setting this to True will configure logformat to json.
+  default_volume_type:
+    type: string
+    default:
+    description: |
+      Default volume-type to use.
   openstack-origin:
     default: distro
     type: string
