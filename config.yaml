@@ -12,6 +12,16 @@ options:
     default: False
     description: |
       Setting this to True will allow supporting services to log to syslog.
+  json-logs:
+    type: boolean
+    default: False
+    description: |
+      Setting this to True will configure logformat to json.
+  default_volume_type:
+    type: string
+    default:
+    description: |
+      Default volume-type to use.
   openstack-origin:
     type: string
     default: distro
